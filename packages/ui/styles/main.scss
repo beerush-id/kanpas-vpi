@@ -1,0 +1,13 @@
+@import 'theme';
+@import 'mixins';
+
+$container: '.#{$variable-prefix}-style';
+
+@include variables($container);
+
+#{$container} {
+  background-color: var(--#{$variable-prefix}-color-background);
+  color: var(--#{$variable-prefix}-color-foreground);
+
+  @include everything;
+}

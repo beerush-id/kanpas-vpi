@@ -1,0 +1,197 @@
+$variable-prefix: kds;
+$color-normal-index: 500;
+
+// Text size variables.
+$text-sizes: (
+  small: 12px,
+  body: 14px,
+  title: 16px,
+  subtitle: 13px,
+  h1: 32px,
+  h2: 24px,
+  h3: 16px,
+  h4: 13px,
+  h5: 12px,
+  h6: 13px
+);
+
+// Spacing variables.
+$named-spaces: (
+  tight: 8px,
+  small: 12px,
+  medium: 24px,
+  large: 32px
+);
+$custom-spaces: (2, 4, 6, 8, 10, 12, 16, 18, 20, 24, 32, 48, 56, 64, 72, 96, 128);
+
+// Border radius variables.
+$named-radius: (
+  tight: 2px,
+  small: 3px,
+  medium: 5px,
+  large: 10px
+);
+$custom-radius: $custom-spaces;
+
+$color-swatches: (
+  blue: (
+    50: #f0f7fe,
+    100: #cfe6fc,
+    200: #b5d5fc,
+    300: #6cacf9,
+    400: #2b87f8,
+    500: #086ce8,
+    600: #0653b2,
+    700: #043776,
+    800: #032754,
+    900: #021c3b
+  ),
+  green: (
+    50: #f2fdf8,
+    100: #baf7dd,
+    200: #71f4bb,
+    300: #0bda80,
+    400: #00a85f,
+    500: #00854b,
+    600: #00663a,
+    700: #004d2b,
+    800: #003820,
+    900: #002916
+  ),
+  red: (
+    50: #fef3f1,
+    100: #fcded9,
+    200: #f9c5b8,
+    300: #f48b71,
+    400: #f06542,
+    500: #d53811,
+    600: #a52c0d,
+    700: #7b200a,
+    800: #561706,
+    900: #390f04
+  ),
+  orange: (
+    50: #fef7f0,
+    100: #fddebf,
+    200: #fabe80,
+    300: #f68c1f,
+    400: #dd7409,
+    500: #b56007,
+    600: #844605,
+    700: #623404,
+    800: #4a2703,
+    900: #311a02
+  ),
+  grey: (
+    10: #fcfcfd,
+    50: #f6f7f9,
+    100: #e7e9ee,
+    200: #c3c9d5,
+    300: #96a1b5,
+    400: #7886a1,
+    500: #63718d,
+    600: #546078,
+    700: #3f485a,
+    800: #353c4b,
+    900: #2a303c,
+    950: #1d222a
+  )
+);
+
+$color-states: (
+  primary: (
+    color: blue,
+    light: (
+      normal: 500,
+      hover: 400,
+      active: 600,
+      focus: 600,
+      disabled: 100
+    ),
+    dark: (
+      normal: 500,
+      hover: 600,
+      active: 400,
+      focus: 600,
+      disabled: 800
+    )
+  ),
+  accent: (
+    color: orange,
+    light: (
+      normal: 500,
+      hover: 400,
+      active: 600,
+      focus: 600,
+      disabled: 100
+    ),
+    dark: (
+      normal: 500,
+      hover: 600,
+      active: 400,
+      focus: 600,
+      disabled: 800
+    )
+  ),
+  warn: (
+    color: red,
+    light: (
+      normal: 500,
+      hover: 400,
+      active: 600,
+      focus: 600,
+      disabled: 100
+    ),
+    dark: (
+      normal: 500,
+      hover: 600,
+      active: 400,
+      focus: 600,
+      disabled: 800
+    )
+  ),
+  success: (
+    color: green,
+    light: (
+      normal: 500,
+      hover: 400,
+      active: 600,
+      focus: 600,
+      disabled: 100
+    ),
+    dark: (
+      normal: 500,
+      hover: 600,
+      active: 400,
+      focus: 600,
+      disabled: 800
+    )
+  )
+);
+
+$color-variables: (
+  background: (
+    light: var(--#{$variable-prefix}-color-grey-10),
+    dark: var(--#{$variable-prefix}-color-grey-900)
+  ),
+  background-alt: (
+    light: var(--#{$variable-prefix}-color-grey-20),
+    dark: var(--#{$variable-prefix}-color-grey-800)
+  ),
+  foreground: (
+    light: var(--#{$variable-prefix}-color-grey-900),
+    dark: var(--#{$variable-prefix}-color-grey-10)
+  ),
+  foreground-alt: (
+    light: var(--#{$variable-prefix}-color-grey-800),
+    dark: var(--#{$variable-prefix}-color-grey-20)
+  ),
+  title: (
+    light: var(--#{$variable-prefix}-color-grey-900),
+    dark: var(--#{$variable-prefix}-color-grey-10)
+  )
+);
+
+$custom-variables: (
+  gradient: linear-gradient(90deg, #fff, #000)
+);

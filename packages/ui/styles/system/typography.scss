@@ -1,0 +1,19 @@
+@mixin text-size-variables {
+  @each $name, $size in $text-sizes {
+    --#{$variable-prefix}-text-#{$name}: #{$size};
+  }
+}
+
+@mixin text-size-classes {
+  @each $name, $size in $text-sizes {
+    .text-#{$name} {
+      font-size: #{$size};
+    }
+  }
+
+  @each $name, $weight in (light: 400, medium: 500, strong: 600) {
+    .text-#{$name} {
+      font-weight: #{$weight};
+    }
+  }
+}

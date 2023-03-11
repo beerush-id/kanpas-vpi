@@ -1,0 +1,119 @@
+@mixin flex-box {
+  .flex {
+    flex: 1;
+  }
+
+  @each $dir in (row, column) {
+    .flex-#{$dir} {
+      display: flex;
+      flex-direction: $dir;
+
+      &.items-center {
+        align-items: center;
+      }
+
+      &.items-start {
+        align-items: flex-start;
+      }
+
+      &.items-end {
+        align-items: flex-end;
+      }
+
+      &.content-start {
+        align-content: flex-start;
+      }
+
+      &.content-end {
+        align-content: flex-end;
+      }
+
+      &.content-center {
+        justify-content: center;
+      }
+    }
+
+    .flex-#{$dir}-center {
+      display: flex;
+      flex-direction: $dir;
+      justify-content: center;
+      align-items: center;
+    }
+
+    .flex-#{$dir}-center-x {
+      display: flex;
+      flex-direction: $dir;
+      @if $dir == row {
+        justify-content: center;
+      }
+      @if $dir == column {
+        align-items: center;
+      }
+    }
+
+    .flex-#{$dir}-center-y {
+      display: flex;
+      flex-direction: $dir;
+      @if $dir == row {
+        align-items: center;
+      }
+      @if $dir == column {
+        justify-content: center;
+      }
+    }
+  }
+}
+
+@mixin display {
+  @each $display in (block, inline, inline-block, none) {
+    .#{$display} {
+      display: $display;
+    }
+  }
+}
+
+@mixin alignments {
+  .-left {
+    text-align: left;
+  }
+
+  .-right {
+    text-align: right;
+  }
+
+  .-top {
+    vertical-align: top;
+  }
+
+  .-bottom {
+    vertical-align: bottom;
+  }
+
+  .-baseline {
+    vertical-align: baseline;
+  }
+
+  .-center {
+    text-align: center;
+    vertical-align: middle;
+  }
+
+  .-center-x {
+    text-align: center;
+  }
+
+  .-center-y {
+    vertical-align: middle;
+  }
+}
+
+@mixin dimension($dimensions) {
+  @each $name, $size in $dimensions {
+    .width-#{$name} {
+      width: $name;
+    }
+    .height-#{$name} {
+      height: $name;
+    }
+  }
+}
