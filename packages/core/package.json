@@ -1,0 +1,63 @@
+{
+  "name": "@beerush/kanpas-core",
+  "version": "0.0.1",
+  "description": "Kanpas System Module",
+  "license": "MIT",
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
+  "typings": "lib/esm/index.d.ts",
+  "exports": {
+    "./package.json": "./lib/package.json",
+    ".": {
+      "types": "./lib/esm/index.d.ts",
+      "import": "./lib/esm/index.js",
+      "require": "./lib/cjs/index.js"
+    },
+    "./utils": {
+      "types": "./lib/esm/utils/index.d.ts",
+      "import": "./lib/esm/utils/index.js",
+      "require": "./lib/cjs/utils/index.js"
+    },
+    "./utils/*": "./lib/utils/*",
+    "./services": {
+      "types": "./lib/esm/services/index.d.ts",
+      "import": "./lib/esm/services/index.js",
+      "require": "./lib/cjs/services/index.js"
+    },
+    "./services/*": "./lib/services/*"
+  },
+  "files": [
+    "./lib/"
+  ],
+  "scripts": {
+    "dev": "pnpm clean:esm && tsc-esm -p tsconfig.json --watch",
+    "dev:core": "pnpm clean:esm && tsc-esm -p tsconfig.json --watch",
+    "dev:esm": "tsc-esm -p tsconfig.json --watch",
+    "dev:cjs": "tsc-esm -p tsconfig-cjs.json --watch",
+    "build": "pnpm clean && tsc-esm -p tsconfig.json && tsc-esm -p tsconfig-cjs.json && node ./pack.js",
+    "clean": "rimraf ./lib",
+    "clean:esm": "rimraf ./lib/esm",
+    "clean:cjs": "rimraf ./lib/cjs",
+    "prepublish": "pnpm build && pnpm docs",
+    "docs": "typedoc",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@digitak/tsc-esm": "^3.1.4",
+    "@types/jest": "^29.4.0",
+    "jest": "^29.5.0",
+    "rimraf": "^4.4.0",
+    "ts-jest": "^29.0.5",
+    "typescript": "^4.9.5"
+  },
+  "author": "Nanang Mahdaen El Agung <mahdaen@gmail.com>",
+  "engines": {
+    "node": ">=16.0.0",
+    "typescript": ">=4.9.5"
+  },
+  "dependencies": {
+    "@beerush/browser-utils": "^0.0.1",
+    "@beerush/reactor": "^0.12.0",
+    "@beerush/utils": "^0.1.0"
+  }
+}

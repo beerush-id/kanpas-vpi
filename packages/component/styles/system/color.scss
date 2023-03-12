@@ -1,0 +1,94 @@
+@use 'sass:map';
+
+@mixin color-swatches {
+  @each $name, $colors in $color-swatches {
+    @each $size, $color in $colors {
+      --#{$variable-prefix}-color-#{""+$name}-#{$size}: #{$color};
+    }
+  }
+}
+
+@mixin color-state-variant($variant: light) {
+  @each $group, $colors in $color-states {
+    @each $state, $i in map.get($colors, $variant) {
+      $value: var(--#{$variable-prefix}-color-#{map.get($colors, 'color')}-#{$i});
+      @if $state == 'normal' {
+        --#{$variable-prefix}-color-#{$group}: #{$value};
+      }
+      @if $state != 'normal' {
+        --#{$variable-prefix}-color-#{$group}-#{$state}: #{$value};
+      }
+    }
+  }
+}
+
+@mixin color-variables($scheme: light) {
+  @each $name, $schemes in $color-variables {
+    --#{$variable-prefix}-color-#{$name}: #{map.get($schemes, $scheme)};
+  }
+}
+
+@mixin color-background-classes {
+  @each $name, $colors in $color-swatches {
+    .bg-#{'' + $name} {
+      background-color: var(--#{$variable-prefix}-color-#{$name}-#{$color-normal-index});
+    }
+
+    @each $size, $color in $colors {
+      .bg-#{'' + $name}-#{$size} {
+        background-color: var(--#{$variable-prefix}-color-#{$name}-#{$size});
+      }
+    }
+  }
+
+  @each $group, $colors in $color-states {
+    @each $state, $i in map.get($colors, 'light') {
+      $key: '.bg-#{$group}-#{$state}';
+      $value: var(--#{$variable-prefix}-color-#{$group}-#{$state});
+
+      @if $state == 'normal' {
+        $key: '.bg-#{$group}';
+        $value: var(--#{$variable-prefix}-color-#{$group});
+      }
+
+      #{$key} {
+        background-color: #{$value};
+      }
+    }
+  }
+}
+
+@mixin color-foreground-classes {
+  @each $name, $colors in $color-swatches {
+    .fg-#{'' + $name} {
+      color: var(--#{$variable-prefix}-color-#{$name}-#{$color-normal-index});
+    }
+
+    @each $size, $color in $colors {
+      .fg-#{'' + $name}-#{$size} {
+        color: var(--#{$variable-prefix}-color-#{$name}-#{$size});
+      }
+    }
+  }
+
+  @each $group, $colors in $color-states {
+    @each $state, $i in map.get($colors, 'light') {
+      $key: '.fg-#{$group}-#{$state}';
+      $value: var(--#{$variable-prefix}-color-#{$group}-#{$state});
+
+      @if $state == 'normal' {
+        $key: '.fg-#{$group}';
+        $value: var(--#{$variable-prefix}-color-#{$group});
+      }
+
+      #{$key} {
+        color: #{$value};
+      }
+    }
+  }
+}
+
+@mixin color-classes {
+  @include color-background-classes;
+  @include color-foreground-classes;
+}

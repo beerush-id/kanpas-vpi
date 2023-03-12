@@ -1,0 +1,26 @@
+@import 'theme';
+@import 'mixins';
+@import 'normalize';
+
+$container: '.#{$variable-prefix}-style';
+
+@include variables($container);
+@include normalize-html;
+
+#{$container} {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 400;
+  font-size: var(--#{$variable-prefix}-text-body);
+  line-height: var(--#{$variable-prefix}-font-body-height);
+
+  color: var(--#{$variable-prefix}-color-foreground);
+  background-color: var(--#{$variable-prefix}-color-background);
+  box-sizing: border-box;
+
+  * {
+    box-sizing: border-box;
+  }
+
+  @include normalize(false);
+  @include everything;
+}

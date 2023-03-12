@@ -1,0 +1,45 @@
+{
+  "name": "@beerush/kanpas-component",
+  "version": "0.0.1",
+  "scripts": {},
+  "svelte": "./index.ts",
+  "type": "module",
+  "exports": {
+    ".": {
+      "import": "./index.ts",
+      "svelte": "./index.ts"
+    },
+    "./actions": {
+      "import": "./actions/index.ts",
+      "svelte": "./actions/index.ts"
+    },
+    "./actions/*": "./actions/*",
+    "./common": {
+      "import": "./common/index.ts",
+      "svelte": "./common/index.ts"
+    },
+    "./common/*": "./common/*",
+    "./styles/*": "./styles/*"
+  },
+  "files": [
+    "actions/*",
+    "common/*",
+    "styles/*"
+  ],
+  "peerDependencies": {
+    "svelte": "^3.54.0"
+  },
+  "devDependencies": {
+    "svelte": "^3.54.0",
+    "svelte-check": "^3.0.1",
+    "tslib": "^2.4.1",
+    "typescript": "^4.9.3"
+  },
+  "dependencies": {
+    "@beerush/browser-utils": "^0.0.1",
+    "@beerush/kanpas-core": "workspace:*",
+    "@beerush/reactor": "^0.12.0",
+    "@beerush/utils": "^0.1.0",
+    "@smui/common": "7.0.0-beta.0"
+  }
+}

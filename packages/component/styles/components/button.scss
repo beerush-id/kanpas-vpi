@@ -1,0 +1,244 @@
+@mixin button {
+  button,
+  .button {
+    display: inline-flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    font-family: var(--#{$variable-prefix}-font-body);
+    padding: var(--#{$variable-prefix}-space-tight) var(--#{$variable-prefix}-space-small);
+    text-transform: uppercase;
+    font-weight: 500;
+    letter-spacing: 1px;
+    appearance: none;
+    border: 1px solid transparent;
+    outline: none;
+    border-radius: var(--#{$variable-prefix}-radius-small);
+    background-color: transparent;
+    cursor: pointer;
+    color: var(--#{$variable-prefix}-color-foreground);
+    background-color: var(--#{$variable-prefix}-color-background);
+
+    .#{$variable-prefix}-icon:first-child:not(:last-child) {
+      margin-right: 8px;
+    }
+
+    .#{$variable-prefix}-icon:last-child:not(:first-child) {
+      margin-left: 8px;
+    }
+
+    &.elevate {
+      box-shadow: 0 0 5px var(--#{$variable-prefix}-color-shadow);
+    }
+
+    &.neutral {
+      background-color: var(--#{$variable-prefix}-color-neutral);
+      color: var(--#{$variable-prefix}-color-neutral-fg);
+
+      &:hover,
+      &:focus,
+      &.focus {
+        background-color: var(--#{$variable-prefix}-color-neutral-hover);
+      }
+
+      &:active {
+        background-color: var(--#{$variable-prefix}-color-neutral-active);
+      }
+    }
+
+    &.primary {
+      background-color: var(--#{$variable-prefix}-color-primary);
+      color: var(--#{$variable-prefix}-color-primary-fg);
+
+      &:hover,
+      &:focus,
+      &.focus {
+        background-color: var(--#{$variable-prefix}-color-primary-hover);
+      }
+
+      &:active {
+        background-color: var(--#{$variable-prefix}-color-primary-active);
+      }
+    }
+
+    &.positive {
+      background-color: var(--#{$variable-prefix}-color-positive);
+      color: var(--#{$variable-prefix}-color-positive-fg);
+
+      &:hover,
+      &:focus,
+      &.focus {
+        background-color: var(--#{$variable-prefix}-color-positive-hover);
+      }
+
+      &:active {
+        background-color: var(--#{$variable-prefix}-color-positive-active);
+      }
+    }
+
+    &.negative {
+      background-color: var(--#{$variable-prefix}-color-negative);
+      color: var(--#{$variable-prefix}-color-negative-fg);
+
+      &:hover,
+      &:focus,
+      &.focus {
+        background-color: var(--#{$variable-prefix}-color-negative-hover);
+      }
+
+      &:active {
+        background-color: var(--#{$variable-prefix}-color-negative-active);
+      }
+    }
+
+    &.destructive {
+      background-color: var(--#{$variable-prefix}-color-destructive);
+      color: var(--#{$variable-prefix}-color-destructive-fg);
+
+      &:hover,
+      &:focus,
+      &.focus {
+        background-color: var(--#{$variable-prefix}-color-destructive-hover);
+      }
+
+      &:active {
+        background-color: var(--#{$variable-prefix}-color-destructive-active);
+      }
+    }
+
+    &.outline {
+      background-color: transparent;
+
+      &.neutral:not(:hover):not(:focus):not(.focus) {
+        border-color: var(--#{$variable-prefix}-color-neutral);
+        color: var(--#{$variable-prefix}-color-neutral);
+      }
+
+      &.primary:not(:hover):not(:focus):not(.focus) {
+        border-color: var(--#{$variable-prefix}-color-primary);
+        color: var(--#{$variable-prefix}-color-primary);
+      }
+
+      &.positive:not(:hover):not(:focus):not(.focus) {
+        border-color: var(--#{$variable-prefix}-color-positive);
+        color: var(--#{$variable-prefix}-color-positive);
+      }
+
+      &.negative:not(:hover):not(:focus):not(.focus) {
+        border-color: var(--#{$variable-prefix}-color-negative);
+        color: var(--#{$variable-prefix}-color-negative);
+      }
+
+      &.destructive:not(:hover):not(:focus):not(.focus) {
+        border-color: var(--#{$variable-prefix}-color-destructive);
+        color: var(--#{$variable-prefix}-color-destructive);
+      }
+    }
+
+    &.borderless {
+      border-color: transparent;
+      background-color: transparent;
+
+      &.neutral:not(:hover):not(:focus):not(.focus) {
+        color: var(--#{$variable-prefix}-color-neutral);
+      }
+
+      &.primary:not(:hover):not(:focus):not(.focus) {
+        color: var(--#{$variable-prefix}-color-primary);
+      }
+
+      &.positive:not(:hover):not(:focus):not(.focus) {
+        color: var(--#{$variable-prefix}-color-positive);
+      }
+
+      &.negative:not(:hover):not(:focus):not(.focus) {
+        color: var(--#{$variable-prefix}-color-negative);
+      }
+
+      &.destructive:not(:hover):not(:focus):not(.focus) {
+        color: var(--#{$variable-prefix}-color-destructive);
+      }
+    }
+
+    &.disabled,
+    &:disabled {
+      opacity: 0.5;
+      pointer-events: none;
+
+      &.neutral {
+        &:not(.borderless):not(.outline) {
+          background-color: var(--#{$variable-prefix}-color-neutral-disabled);
+        }
+
+        &.outline {
+          border-color: var(--#{$variable-prefix}-color-neutral-disabled);
+        }
+
+        &.outline,
+        &.borderless {
+          color: var(--#{$variable-prefix}-color-neutral-disabled);
+        }
+      }
+
+      &.primary {
+        &:not(.borderless):not(.outline) {
+          background-color: var(--#{$variable-prefix}-color-primary-disabled);
+        }
+
+        &.outline {
+          border-color: var(--#{$variable-prefix}-color-primary-disabled);
+        }
+
+        &.outline,
+        &.borderless {
+          color: var(--#{$variable-prefix}-color-primary-disabled);
+        }
+      }
+
+      &.positive {
+        &:not(.borderless):not(.outline) {
+          background-color: var(--#{$variable-prefix}-color-positive-disabled);
+        }
+
+        &.outline {
+          border-color: var(--#{$variable-prefix}-color-positive-disabled);
+        }
+
+        &.outline,
+        &.borderless {
+          color: var(--#{$variable-prefix}-color-positive-disabled);
+        }
+      }
+
+      &.negative {
+        &:not(.borderless):not(.outline) {
+          background-color: var(--#{$variable-prefix}-color-negative-disabled);
+        }
+
+        &.outline {
+          border-color: var(--#{$variable-prefix}-color-negative-disabled);
+        }
+
+        &.outline,
+        &.borderless {
+          color: var(--#{$variable-prefix}-color-negative-disabled);
+        }
+      }
+
+      &.destructive {
+        &:not(.borderless):not(.outline) {
+          background-color: var(--#{$variable-prefix}-color-destructive-disabled);
+        }
+
+        &.outline {
+          border-color: var(--#{$variable-prefix}-color-destructive-disabled);
+        }
+
+        &.outline,
+        &.borderless {
+          color: var(--#{$variable-prefix}-color-destructive-disabled);
+        }
+      }
+    }
+  }
+}

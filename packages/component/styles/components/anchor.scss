@@ -1,0 +1,32 @@
+@mixin anchor {
+  a,
+  .anchor {
+    text-decoration: none;
+    outline: none;
+    cursor: pointer;
+    color: var(--#{$variable-prefix}-color-primary);
+    font-weight: 500;
+
+    &:hover,
+    &:focus {
+      color: var(--#{$variable-prefix}-color-primary-hover);
+    }
+
+    &:active {
+      color: var(--#{$variable-prefix}-color-primary-active);
+    }
+
+    &.negative {
+      color: var(--#{$variable-prefix}-color-negative);
+
+      &:hover,
+      &:focus {
+        color: var(--#{$variable-prefix}-color-negative-hover);
+      }
+
+      &:active {
+        color: var(--#{$variable-prefix}-color-negative-active);
+      }
+    }
+  }
+}

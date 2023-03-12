@@ -2,17 +2,21 @@
   "private": true,
   "scripts": {
     "build": "turbo run build",
-    "dev": "turbo run dev",
+    "dev": "turbo run dev --no-daemon",
+    "dev:core": "turbo run dev:core --no-daemon",
+    "dev:app": "turbo run dev --no-daemon --filter @beerush/kanpas-app",
+    "dev:web": "turbo run dev --no-daemon --filter @beerush/kanpas-web",
     "lint": "turbo run lint",
     "format": "prettier --write ."
   },
   "devDependencies": {
-    "eslint": "^8.0.0",
+    "eslint": "^8.36.0",
     "eslint-config-custom": "workspace:*",
-    "prettier": "^2.7.1",
-    "prettier-plugin-svelte": "^2.7.0",
+    "prettier": "^2.8.4",
+    "prettier-plugin-svelte": "^2.9.0",
     "sass": "^1.59.2",
-    "turbo": "latest"
+    "turbo": "latest",
+    "typescript": "^4.9.5"
   },
   "packageManager": "pnpm@7.15.0"
 }

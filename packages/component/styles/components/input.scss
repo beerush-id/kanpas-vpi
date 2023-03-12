@@ -1,0 +1,82 @@
+@mixin input {
+  select,
+  textarea,
+  input {
+    outline: none;
+    color: var(--#{$variable-prefix}-color-foreground);
+    background-color: var(--#{$variable-prefix}-color-input-bg);
+    font-family: var(--#{$variable-prefix}-font-body);
+    font-size: var(--#{$variable-prefix}-font-subtitle);
+    line-height: 1;
+    border: 1px solid var(--#{$variable-prefix}-color-input-line);
+    border-radius: var(--#{$variable-prefix}-radius-small);
+    min-width: 0;
+
+    &::placeholder {
+      font-family: var(--#{$variable-prefix}-font-body);
+      color: var(--#{$variable-prefix}-color-foreground);
+      opacity: 0.75;
+    }
+
+    &:hover {
+      border-color: var(--#{$variable-prefix}-color-input-line-hover);
+    }
+
+    &:focus {
+      border-color: var(--#{$variable-prefix}-color-input-line-active);
+    }
+
+    &.disabled,
+    &[disabled] {
+      pointer-events: none;
+      opacity: 0.5;
+    }
+  }
+
+  select.active {
+    border-color: var(--#{$variable-prefix}-color-positive-active);
+  }
+
+  input,
+  textarea {
+    font-family: var(--#{$variable-prefix}-font), sans-serif;
+    overflow: unset;
+    padding: 2px 8px;
+  }
+
+  [contenteditable] {
+    outline: none;
+    transition: all 0.2s ease-in-out;
+    position: relative;
+
+    &:hover {
+      color: var(--#{$variable-prefix}-color-input-line-active);
+    }
+
+    &:before {
+      content: '';
+      width: 100%;
+      height: calc(100% + 7px);
+      display: block;
+      position: absolute;
+      top: 0;
+      left: -2px;
+      border: 1px solid var(--#{$variable-prefix}-color-input-line-active);
+      margin-top: -4px;
+      border-radius: var(--#{$variable-prefix}-radius-small);
+      opacity: 0;
+      visibility: visible;
+      z-index: 0;
+      pointer-events: none;
+    }
+
+    &:focus {
+      padding: 0 10px;
+
+      &:before {
+        opacity: 1;
+        visibility: visible;
+      }
+    }
+  }
+}

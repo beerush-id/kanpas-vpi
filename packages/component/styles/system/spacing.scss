@@ -1,0 +1,107 @@
+@mixin spacing-variables {
+  @each $name, $value in $named-spaces {
+    --#{$variable-prefix}-space-#{$name}: #{$value};
+  }
+  @each $i in $custom-spaces {
+    --#{$variable-prefix}-space-#{$i}: #{$i}px;
+  }
+}
+
+@mixin radius-variables {
+  @each $name, $value in $named-radius {
+    --#{$variable-prefix}-radius-#{$name}: #{$value};
+  }
+  @each $i in $custom-radius {
+    --#{$variable-prefix}-radius-#{$i}: #{$i}px;
+  }
+}
+
+@mixin named-space-classes {
+  @each $i, $size in $named-spaces {
+    @each $n, $p in (p: padding, m: margin) {
+      .#{$n}-#{$i} {
+        #{$p}: #{$size};
+      }
+    }
+
+    @each $d, $p in (l: left, t: top, r: right, b: bottom) {
+      .p#{$d}-#{$i} {
+        padding-#{$p}: #{$size};
+      }
+      .m#{$d}-#{$i} {
+        margin-#{$p}: #{$size};
+      }
+    }
+
+    @each $d,
+      $prop
+        in (
+          x: (
+            left,
+            right
+          ),
+          y: (
+            top,
+            bottom
+          )
+        )
+    {
+      .p#{$d}-#{$i} {
+        @each $p in $prop {
+          padding-#{$p}: #{$size};
+        }
+      }
+      .m#{$d}-#{$i} {
+        @each $p in $prop {
+          margin-#{$p}: #{$size};
+        }
+      }
+    }
+  }
+}
+
+@mixin custom-space-classes {
+  @each $i in $custom-spaces {
+    .pd-#{$i} {
+      padding: #{$i}px;
+    }
+
+    .md-#{$i} {
+      margin: #{$i}px;
+    }
+
+    @each $d,
+      $prop
+        in (
+          x: (
+            left,
+            right
+          ),
+          y: (
+            top,
+            bottom
+          )
+        )
+    {
+      .pd#{$d}-#{$i} {
+        @each $p in $prop {
+          padding-#{$p}: #{$i}px;
+        }
+      }
+      .md#{$d}-#{$i} {
+        @each $p in $prop {
+          margin-#{$p}: #{$i}px;
+        }
+      }
+    }
+
+    @each $d, $prop in (l: left, t: top, r: right, b: bottom) {
+      .pd#{$d}-#{$i} {
+        padding-#{$prop}: #{$i}px;
+      }
+      .md#{$d}-#{$i} {
+        margin-#{$prop}: #{$i}px;
+      }
+    }
+  }
+}

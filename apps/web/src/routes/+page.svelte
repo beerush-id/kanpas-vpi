@@ -1,9 +1,6 @@
 <script lang="ts">
-  import 'ui/styles/main.scss';
-  import { MyCounterButton } from 'ui';
 </script>
 
-<h1>Web</h1>
-<MyCounterButton />
+<h1 class="fg-destructive">Web</h1>
 
 <p>Visit <a href="https://kit.svelte.dev">kit.svelte.dev</a> to read the documentation</p>

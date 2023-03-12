@@ -1,0 +1,47 @@
+{
+  "name": "@beerush/kanpas-engine",
+  "version": "0.0.1",
+  "description": "Kanpas System Module",
+  "license": "MIT",
+  "main": "lib/cjs/index.js",
+  "module": "lib/esm/index.js",
+  "typings": "lib/esm/index.d.ts",
+  "exports": {
+    "./package.json": "./lib/package.json",
+    ".": {
+      "types": "./lib/esm/index.d.ts",
+      "import": "./lib/esm/index.js",
+      "require": "./lib/cjs/index.js"
+    }
+  },
+  "files": [
+    "./bin/",
+    "./lib/"
+  ],
+  "scripts": {
+    "dev": "npm run clean:esm && tsc-esm -p tsconfig.json --watch",
+    "dev:core": "npm run clean:esm && tsc-esm -p tsconfig.json --watch",
+    "dev:esm": "tsc-esm -p tsconfig.json --watch",
+    "dev:cjs": "tsc-esm -p tsconfig-cjs.json --watch",
+    "build": "npm run test && npm run clean && tsc-esm -p tsconfig.json && tsc-esm -p tsconfig-cjs.json && node ./pack.js",
+    "clean": "rimraf ./lib",
+    "clean:esm": "rimraf ./lib/esm",
+    "clean:cjs": "rimraf ./lib/cjs",
+    "prepublish": "npm run build && npm run docs",
+    "docs": "typedoc",
+    "test": "jest"
+  },
+  "devDependencies": {
+    "@digitak/tsc-esm": "^3.1.4",
+    "@types/jest": "^29.4.0",
+    "jest": "^29.5.0",
+    "rimraf": "^4.4.0",
+    "ts-jest": "^29.0.5",
+    "typescript": "^4.9.5"
+  },
+  "author": "Nanang Mahdaen El Agung <mahdaen@gmail.com>",
+  "engines": {
+    "node": ">=16.0.0",
+    "typescript": ">=4.9.5"
+  }
+}

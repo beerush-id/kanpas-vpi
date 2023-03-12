@@ -1,0 +1,100 @@
+@import 'system/color';
+@import 'system/spacing';
+@import 'system/layout';
+@import 'system/typography';
+@import 'components/anchor';
+@import 'components/input';
+@import 'components/button';
+
+@mixin variables($selector: ':root') {
+  #{$selector} {
+    @include text-size-variables;
+    @include spacing-variables;
+    @include radius-variables;
+    @include color-swatches;
+
+    @include color-state-variant(light);
+    @include color-variables(light);
+
+    // Custom variables.
+    @each $name, $value in $custom-variables {
+      --#{$variable-prefix}-#{$name}: #{$value};
+    }
+  }
+
+  @media (prefers-color-scheme: dark) {
+    #{$selector} {
+      @include color-state-variant(dark);
+      @include color-variables(dark);
+    }
+  }
+
+  .kds-light {
+    @include color-state-variant(light);
+    @include color-variables(light);
+    color-scheme: only light;
+  }
+
+  .kds-dark {
+    @include color-state-variant(dark);
+    @include color-variables(dark);
+    color-scheme: only dark;
+  }
+}
+
+@mixin resets {
+  @for $i from 1 to 6 {
+    h#{$i} {
+      font-size: var(--#{$variable-prefix}-text-h#{$i});
+    }
+  }
+
+  h1,
+  h2,
+  h3,
+  h4,
+  h5,
+  h6 {
+    color: var(--#{$variable-prefix}-color-title);
+    margin: 0;
+  }
+
+  h1,
+  h2,
+  h3 {
+    font-weight: 600;
+  }
+
+  h4,
+  h5,
+  h6 {
+    font-weight: 500;
+  }
+
+  ul {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  a,
+  input,
+  button,
+  select,
+  textarea,
+  input {
+    transition: var(--#{$variable-prefix}-transition-light);
+  }
+}
+
+@mixin everything {
+  @include resets;
+  @include color-classes;
+  @include text-size-classes;
+  @include named-space-classes;
+  @include custom-space-classes;
+
+  @include anchor;
+  @include input;
+  @include button;
+}

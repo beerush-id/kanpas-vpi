@@ -1,0 +1,38 @@
+{
+  "compilerOptions": {
+    "rootDirs": [
+      "./"
+    ],
+    "allowJs": true,
+    "checkJs": true,
+    "esModuleInterop": true,
+    "forceConsistentCasingInFileNames": true,
+    "resolveJsonModule": true,
+    "skipLibCheck": true,
+    "sourceMap": true,
+    "strict": true,
+    "moduleResolution": "node",
+    "module": "esnext",
+    "target": "esnext",
+    "importsNotUsedAsValues": "error",
+    "isolatedModules": true,
+    "preserveValueImports": true,
+    "lib": [
+      "esnext",
+      "DOM",
+      "DOM.Iterable"
+    ],
+    "paths": {
+      "$actions/*": ["./actions/*"],
+      "$common/*": ["./common/*"]
+    }
+  },
+  "include": [
+    "./actions/**/*.ts",
+    "./common/**/*.ts",
+    "./common/**/*.svelte"
+  ],
+  "exclude": [
+    "./node_modules/**"
+  ]
+}
