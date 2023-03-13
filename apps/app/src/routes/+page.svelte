@@ -1,18 +1,18 @@
 <script lang="ts">
-  import { Button, Input, PopUp } from '@beerush/kanpas-component';
-  import { portal } from '@beerush/kanpas-component/actions';
-  import '@beerush/kanpas-component/styles/main.scss';
+  import { Button, Input, Panel, PopUp } from '@common';
+  import '@styles/main.scss';
+  import { portal } from '@actions';
 
   let count = 0;
   const todos = [ 'a', 'b', 'c' ];
 </script>
 
-<div class="p-medium">
-  <h1 class="fg-destructive">Web</h1>
+<div class="p-md">
+  <h1 class="text-neutral">Web</h1>
   <section>
     <Button color="primary" on:click={() => count += 1}>
       clicked: {count} times
-      <PopUp>Test</PopUp>
+      <PopUp xDir="after" yDir="between">Test</PopUp>
     </Button>
   </section>
   <section class="flex-row">
@@ -21,6 +21,9 @@
         <Input placeholder="Testing"/>
       {/each}
     </div>
+    <Panel title="Test">
+
+    </Panel>
   </section>
 
   <div use:portal={'.kds-portal'}>Should be moved to portal slot.</div>

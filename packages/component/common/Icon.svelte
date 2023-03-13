@@ -93,15 +93,15 @@
     font-size: 14px;
   }
 
-  .kds-icon-small {
+  .kds-icon-sm {
     font-size: 18px;
   }
 
-  .kds-icon-medium {
+  .kds-icon-md {
     font-size: 24px;
   }
 
-  .kds-icon-large {
+  .kds-icon-lg {
     font-size: 32px;
   }
 

@@ -3,18 +3,18 @@
   textarea,
   input {
     outline: none;
-    color: var(--#{$variable-prefix}-color-foreground);
+    color: var(--#{$variable-prefix}-color-text);
     background-color: var(--#{$variable-prefix}-color-input-bg);
     font-family: var(--#{$variable-prefix}-font-body);
     font-size: var(--#{$variable-prefix}-font-subtitle);
     line-height: 1;
     border: 1px solid var(--#{$variable-prefix}-color-input-line);
-    border-radius: var(--#{$variable-prefix}-radius-small);
+    border-radius: var(--#{$variable-prefix}-radius-sm);
     min-width: 0;
 
     &::placeholder {
       font-family: var(--#{$variable-prefix}-font-body);
-      color: var(--#{$variable-prefix}-color-foreground);
+      color: var(--#{$variable-prefix}-color-text);
       opacity: 0.75;
     }
 
@@ -63,7 +63,7 @@
       left: -2px;
       border: 1px solid var(--#{$variable-prefix}-color-input-line-active);
       margin-top: -4px;
-      border-radius: var(--#{$variable-prefix}-radius-small);
+      border-radius: var(--#{$variable-prefix}-radius-sm);
       opacity: 0;
       visibility: visible;
       z-index: 0;

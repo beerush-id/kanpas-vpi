@@ -170,7 +170,7 @@
 {#if attach || !performance}
   {#if role === 'tooltip'}
     <span
-      class="kanpas-tooltip x-{xDir} y-{yDir}"
+      class="kds-tooltip x-{xDir} y-{yDir}"
       class:active
       bind:this={element}
       on:wheel|stopPropagation
@@ -178,12 +178,12 @@
       <slot/>
     </span>
   {:else if role === 'overlay'}
-    <div class="kanpas-overlay kanpas-acrylic" bind:this={element} on:wheel|stopPropagation>
+    <div class="kds-overlay kds-acrylic" bind:this={element} on:wheel|stopPropagation>
       <slot/>
     </div>
   {:else}
     <div
-      class="kanpas-popup x-{xDir} y-{yDir}"
+      class="kds-popup x-{xDir} y-{yDir}"
       class:active
       class:expanded
       class:reset
@@ -199,7 +199,7 @@
   {#if active && (trigger === 'click' || trigger === 'mixed')}
     <div
       bind:this={overlay}
-      class="kanpas-popup-overlay"
+      class="kds-popup-overlay"
       on:mouseenter={deactivateMixed}
       on:mouseleave={cancelDeactivateMixed}
       on:keypress
@@ -208,8 +208,8 @@
 {/if}
 
 <style lang="scss">
-  .kanpas-tooltip,
-  .kanpas-popup {
+  .kds-tooltip,
+  .kds-popup {
     position: fixed;
     z-index: 9999;
     transition: opacity 0.2s ease-in-out, margin 0.2s ease-in-out, visibility 0.2s ease-in-out;
@@ -217,8 +217,8 @@
     visibility: hidden;
 
     &:not(.reset) {
-      backdrop-filter: blur(var(--kanpas-acrylic-blur));
-      background-color: var(--kanpas-color-acrylic);
+      backdrop-filter: blur(var(--kds-acrylic-blur));
+      background-color: var(--kds-color-acrylic);
     }
 
     &.active {
@@ -227,13 +227,13 @@
     }
   }
 
-  .kanpas-popup:not(.reset) {
-    padding: var(--kanpas-space-small);
-    border-radius: var(--kanpas-radius);
+  .kds-popup:not(.reset) {
+    padding: var(--kds-space-sm);
+    border-radius: var(--kds-radius);
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.3);
 
     &:before {
-      border-radius: var(--kanpas-radius);
+      border-radius: var(--kds-radius);
     }
 
     &.expanded {
@@ -241,7 +241,7 @@
     }
   }
 
-  .kanpas-overlay {
+  .kds-overlay {
     position: absolute;
     top: 100%;
     left: 0;
@@ -257,7 +257,7 @@
     }
   }
 
-  .kanpas-popup-overlay {
+  .kds-popup-overlay {
     display: block;
     position: fixed;
     top: 0;
@@ -267,12 +267,12 @@
     z-index: 9998;
   }
 
-  .kanpas-tooltip {
+  .kds-tooltip {
     padding: 8px 10px;
-    font-size: var(--kanpas-font-subtitle);
+    font-size: var(--kds-font-subtitle);
     pointer-events: none;
     white-space: nowrap;
-    border-radius: var(--kanpas-radius-small);
+    border-radius: var(--kds-radius-sm);
     box-shadow: 0 0 5px rgba(0, 0, 0, 0.3);
 
     &.accept-sync {
@@ -280,7 +280,7 @@
     }
 
     &:before {
-      border-radius: var(--kanpas-radius-small);
+      border-radius: var(--kds-radius-sm);
     }
 
     &.active {

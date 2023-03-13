@@ -1,7 +1,7 @@
-@import 'system/color';
-@import 'system/spacing';
-@import 'system/layout';
-@import 'system/typography';
+@import 'common/color';
+@import 'common/spacing';
+@import 'common/layout';
+@import 'common/typography';
 @import 'components/anchor';
 @import 'components/input';
 @import 'components/button';
@@ -83,7 +83,7 @@
   select,
   textarea,
   input {
-    transition: var(--#{$variable-prefix}-transition-light);
+    transition: var(--#{$variable-prefix}-effect-light);
   }
 }
 

@@ -18,13 +18,13 @@
       "import": "./lib/esm/utils/index.js",
       "require": "./lib/cjs/utils/index.js"
     },
-    "./utils/*": "./lib/utils/*",
+    "./utils/*": "./src/utils/*",
     "./services": {
       "types": "./lib/esm/services/index.d.ts",
       "import": "./lib/esm/services/index.js",
       "require": "./lib/cjs/services/index.js"
     },
-    "./services/*": "./lib/services/*"
+    "./services/*": "./src/services/*"
   },
   "files": [
     "./lib/"

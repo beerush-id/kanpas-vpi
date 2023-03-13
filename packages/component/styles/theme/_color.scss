@@ -1,0 +1,210 @@
+$color-swatches: (
+  blue: (
+    50: #f0f7fe,
+    100: #cfe6fc,
+    200: #b5d5fc,
+    300: #6cacf9,
+    400: #2b87f8,
+    500: #086ce8,
+    600: #0653b2,
+    700: #043776,
+    800: #032754,
+    900: #021c3b
+  ),
+  green: (
+    50: #f2fdf8,
+    100: #baf7dd,
+    200: #71f4bb,
+    300: #0bda80,
+    400: #00a85f,
+    500: #00854b,
+    600: #00663a,
+    700: #004d2b,
+    800: #003820,
+    900: #002916
+  ),
+  red: (
+    50: #fef3f1,
+    100: #fcded9,
+    200: #f9c5b8,
+    300: #f48b71,
+    400: #f06542,
+    500: #d53811,
+    600: #a52c0d,
+    700: #7b200a,
+    800: #561706,
+    900: #390f04
+  ),
+  orange: (
+    50: #fef7f0,
+    100: #fddebf,
+    200: #fabe80,
+    300: #f68c1f,
+    400: #dd7409,
+    500: #b56007,
+    600: #844605,
+    700: #623404,
+    800: #4a2703,
+    900: #311a02
+  ),
+  grey: (
+    10: #fcfcfd,
+    50: #edeeef,
+    100: #dfe0e5,
+    200: #c3c9d5,
+    300: #9694b2,
+    400: #757489,
+    500: #646374,
+    600: #545361,
+    700: #41404c,
+    800: #33323c,
+    900: #2b2a33,
+    950: #1c1b22,
+    1000: #121217
+  )
+);
+
+$color-states: (
+  neutral: (
+    color: grey,
+    light: (
+      text: 10,
+      normal: 800,
+      hover: 700,
+      active: 900,
+      focus: 700,
+      disabled: 500
+    ),
+    dark: (
+      text: 1000,
+      normal: 100,
+      hover: 10,
+      active: 200,
+      focus: 10,
+      disabled: 800
+    )
+  ),
+  primary: (
+    color: blue,
+    light: (
+      text: 50,
+      normal: 500,
+      hover: 400,
+      active: 600,
+      focus: 400,
+      disabled: 100
+    ),
+    dark: (
+      text: 10,
+      normal: 500,
+      hover: 600,
+      active: 400,
+      focus: 400,
+      disabled: 800
+    )
+  ),
+  negative: (
+    color: orange,
+    light: (
+      text: 50,
+      normal: 500,
+      hover: 400,
+      active: 600,
+      focus: 400,
+      disabled: 100
+    ),
+    dark: (
+      text: 10,
+      normal: 500,
+      hover: 600,
+      active: 400,
+      focus: 400,
+      disabled: 800
+    )
+  ),
+  destructive: (
+    color: red,
+    light: (
+      text: 50,
+      normal: 500,
+      hover: 400,
+      active: 600,
+      focus: 400,
+      disabled: 100
+    ),
+    dark: (
+      text: 10,
+      normal: 500,
+      hover: 600,
+      active: 400,
+      focus: 400,
+      disabled: 800
+    )
+  ),
+  positive: (
+    color: green,
+    light: (
+      text: 50,
+      normal: 500,
+      hover: 400,
+      active: 600,
+      focus: 400,
+      disabled: 100
+    ),
+    dark: (
+      text: 10,
+      normal: 500,
+      hover: 600,
+      active: 400,
+      focus: 400,
+      disabled: 800
+    )
+  )
+);
+
+$color-variables: (
+  'white': (
+    light: #ffffff,
+    dark: #000000
+  ),
+  'black': (
+    light: #000000,
+    dark: #ffffff
+  ),
+  'background': (
+    light: var(--#{$variable-prefix}-color-grey-100),
+    dark: var(--#{$variable-prefix}-color-grey-900)
+  ),
+  'background-alt': (
+    light: var(--#{$variable-prefix}-color-grey-20),
+    dark: var(--#{$variable-prefix}-color-grey-800)
+  ),
+  'text': (
+    light: var(--#{$variable-prefix}-color-grey-1000),
+    dark: var(--#{$variable-prefix}-color-grey-10)
+  ),
+  'text-alt': (
+    light: var(--#{$variable-prefix}-color-grey-800),
+    dark: var(--#{$variable-prefix}-color-grey-20)
+  ),
+  'input-bg': (
+    light: var(--#{$variable-prefix}-color-grey-50),
+    dark: var(--#{$variable-prefix}-color-grey-700)
+  ),
+  'input-line': (
+    light: var(--#{$variable-prefix}-color-grey-300),
+    dark: var(--#{$variable-prefix}-color-grey-950)
+  ),
+  'input-line-hover': (
+    light: var(--#{$variable-prefix}-color-primary-hover),
+    dark: var(--#{$variable-prefix}-color-primary-hover)
+  ),
+  'input-line-active': (
+    light: var(--#{$variable-prefix}-color-primary-active),
+    dark: var(--#{$variable-prefix}-color-primary-active)
+  ),
+  'title': (
+    light: var(--#{$variable-prefix}-color-grey-1000),
+    dark: var(--#{$variable-prefix}-color-grey-10)
+  ),
+);

@@ -23,8 +23,8 @@
       "DOM.Iterable"
     ],
     "paths": {
-      "$actions/*": ["./actions/*"],
-      "$common/*": ["./common/*"]
+      "@actions/*": ["./actions/*"],
+      "@common/*": ["./common/*"]
     }
   },
   "include": [

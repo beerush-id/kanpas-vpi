@@ -8,7 +8,13 @@ const config = {
   preprocess: preprocess(),
 
   kit: {
-    adapter: adapter()
+    adapter: adapter(),
+    alias: {
+      '@components': '../../packages/component',
+      '@common': '../../packages/component/common',
+      '@actions': '../../packages/component/actions',
+      '@styles': '../../packages/component/styles',
+    }
   }
 };
 

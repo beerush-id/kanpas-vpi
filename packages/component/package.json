@@ -30,6 +30,7 @@
     "svelte": "^3.54.0"
   },
   "devDependencies": {
+    "@picocss/pico": "^1.5.7",
     "svelte": "^3.54.0",
     "svelte-check": "^3.0.1",
     "tslib": "^2.4.1",

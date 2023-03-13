@@ -42,7 +42,7 @@
     display: contents;
 
     .kds-panel-title:not(:last-child) {
-      margin-bottom: var(--kds-space-small);
+      margin-bottom: var(--kds-space-sm);
       user-select: none;
     }
 
@@ -54,7 +54,7 @@
       justify-content: space-between;
 
       &:not(:last-child) {
-        margin-bottom: var(--kds-space-small);
+        margin-bottom: var(--kds-space-sm);
       }
     }
 

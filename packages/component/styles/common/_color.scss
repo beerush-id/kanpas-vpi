@@ -58,14 +58,14 @@
   }
 }
 
-@mixin color-foreground-classes {
+@mixin color-text-classes {
   @each $name, $colors in $color-swatches {
-    .fg-#{'' + $name} {
+    .text-#{'' + $name} {
       color: var(--#{$variable-prefix}-color-#{$name}-#{$color-normal-index});
     }
 
     @each $size, $color in $colors {
-      .fg-#{'' + $name}-#{$size} {
+      .text-#{'' + $name}-#{$size} {
         color: var(--#{$variable-prefix}-color-#{$name}-#{$size});
       }
     }
@@ -73,11 +73,11 @@
 
   @each $group, $colors in $color-states {
     @each $state, $i in map.get($colors, 'light') {
-      $key: '.fg-#{$group}-#{$state}';
+      $key: '.text-#{$group}-#{$state}';
       $value: var(--#{$variable-prefix}-color-#{$group}-#{$state});
 
       @if $state == 'normal' {
-        $key: '.fg-#{$group}';
+        $key: '.text-#{$group}';
         $value: var(--#{$variable-prefix}-color-#{$group});
       }
 
@@ -90,5 +90,5 @@
 
 @mixin color-classes {
   @include color-background-classes;
-  @include color-foreground-classes;
+  @include color-text-classes;
 }

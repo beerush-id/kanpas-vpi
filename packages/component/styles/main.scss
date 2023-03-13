@@ -13,7 +13,7 @@ $container: '.#{$variable-prefix}-style';
   font-size: var(--#{$variable-prefix}-text-body);
   line-height: var(--#{$variable-prefix}-font-body-height);
 
-  color: var(--#{$variable-prefix}-color-foreground);
+  color: var(--#{$variable-prefix}-color-text);
   background-color: var(--#{$variable-prefix}-color-background);
   box-sizing: border-box;
 

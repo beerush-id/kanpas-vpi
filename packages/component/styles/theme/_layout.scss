@@ -1,0 +1,18 @@
+// Spacing variables.
+$named-spaces: (
+  xs: 8px,
+  sm: 12px,
+  md: 24px,
+  lg: 32px
+);
+$custom-spaces: (2, 4, 6, 8, 10, 12, 16, 18, 20, 24, 32, 48, 56, 64, 72, 96, 128);
+
+// Border radius variables.
+$named-radius: (
+  xs: 2px,
+  sm: 3px,
+  md: 5px,
+  lg: 10px,
+  xl: 20px
+);
+$custom-radius: $custom-spaces;
