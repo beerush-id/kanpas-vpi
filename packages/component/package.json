@@ -19,6 +19,11 @@
       "svelte": "./common/index.ts"
     },
     "./common/*": "./common/*",
+    "./layout": {
+      "import": "./layout/index.ts",
+      "svelte": "./layout/index.ts"
+    },
+    "./layout/*": "./layout/*",
     "./styles/*": "./styles/*"
   },
   "files": [

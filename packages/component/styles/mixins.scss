@@ -93,6 +93,18 @@
   @include text-size-classes;
   @include named-space-classes;
   @include custom-space-classes;
+  @include flex-box;
+  @include display;
+  @include alignments;
+  @include dimension(
+    (
+      full: 100%,
+      half: 50%,
+      third: 33.3333333333%,
+      two-thirds: 66.6666666667%,
+      quarter: 25%,
+    )
+  );
 
   @include anchor;
   @include input;

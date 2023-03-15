@@ -1,5 +1,8 @@
 <script lang="ts">
   import { onDestroy, onMount } from 'svelte';
+  import { Header } from '@beerush/kanpas-component/layout';
+
+  export let data: any;
 
   const getRenderContext = (e: MouseEvent) => {
     const target = e.target as HTMLElement;
@@ -9,6 +12,7 @@
 
   if (typeof window !== 'undefined') {
     onMount(() => {
+      console.log(data);
       document.addEventListener('click', getRenderContext);
     });
 
@@ -17,6 +21,12 @@
     });
   }
 </script>
+
+<Header>
+  <svelte:fragment slot="logo">
+    <a href="/">Kanpas</a>
+  </svelte:fragment>
+</Header>
 <main class="kds-main">
-  <slot></slot>
+  <slot />
 </main>

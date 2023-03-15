@@ -15,7 +15,8 @@
   "dependencies": {
     "@beerush/kanpas-component": "workspace:*",
     "@beerush/kanpas-core": "workspace:*",
-    "@beerush/kanpas-engine": "workspace:*"
+    "@beerush/kanpas-engine": "workspace:*",
+    "directory-tree": "^3.5.1"
   },
   "devDependencies": {
     "@sveltejs/adapter-auto": "latest",
